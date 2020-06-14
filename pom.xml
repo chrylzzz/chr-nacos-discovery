@@ -10,6 +10,7 @@
     <modules>
         <module>app-provider</module>
         <module>app-consumer</module>
+        <module>nacos-micro-service</module>
     </modules>
     <packaging>pom</packaging>
     <description>nacos 父工程</description>
