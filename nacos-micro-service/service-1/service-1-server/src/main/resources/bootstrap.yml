@@ -1,0 +1,34 @@
+server:
+  port: ${port:56030}
+
+spring:
+  application:
+    name: service1
+  main:
+    allow-bean-definition-overriding: true  #springBoot 2.1 需要设定,防止重复
+  cloud:
+    nacos:
+      # 服务发现
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: c6fcef0a-e7ef-4ebd-8341-8291acf705b9 #指定空间注册,默认在public下
+        cluster-name: CHRYLDISCOVERYGROUP # 指定集群的名字, 默认在DEFAULT下,注意 cluster名字只能a-z字母即可
+      # 配置管理
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        namespace: c6fcef0a-e7ef-4ebd-8341-8291acf705b9
+        group: CHRYL_CONFIG_GROUP
+dubbo:
+  scan:
+    base-packages: com.chryl.service.impl #dubbo 服务扫描基准包,将@service注解的实现暴露给dubbo
+  protocol:
+    name: dubbo # 指定dubbo 协议,默认为dubbo协议
+    port: ${dubbo_port:20881} # dubbo 协议端口
+  registry:
+    address: nacos://127.0.0.1:8848 # 注册到naocs ,相当于dubbo的xml配置中的 <dubbo:register address="ip:port"/>
+#    group:  #指定注册的组
+  application:
+    qos-enable: false # 是否开启 dubbo运维服务
+  consumer:
+    check: false  # 启动时是否检查依赖的服务

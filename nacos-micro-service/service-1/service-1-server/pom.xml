@@ -10,6 +10,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>service-1-server</artifactId>
+    <description>dubbo接口的实现,注册到dubbo上
+        serviceImpl项目作为api的实现类,需要暴露到dubbo上,添加@service注解,
+        所以需要springcloud-nacos 和dubbo-nacos的配置
+    </description>
 
 
+    <dependencies>
+        <!-- 该项目作为dubbo接口,引入接口依赖 -->
+        <dependency>
+            <groupId>com.chryl</groupId>
+            <artifactId>service-1-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- nacos discovery-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- nacos config -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- cloud dubbo :将实现暴露给 dubbo -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+    </dependencies>
 </project>

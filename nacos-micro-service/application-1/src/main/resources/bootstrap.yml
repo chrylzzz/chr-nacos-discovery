@@ -1,0 +1,24 @@
+server:
+  port: 56020
+  servlet:
+    context-path: /application1 # 该路径为项目的路径
+
+spring:
+  application:
+    name: application1
+  main:
+    allow-bean-definition-overriding: true  #springBoot 2.1 需要设定,防止重复
+  cloud:
+    nacos:
+      # 服务发现
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: c6fcef0a-e7ef-4ebd-8341-8291acf705b9 #指定空间注册,默认在public下
+        cluster-name: CHRYLDISCOVERYGROUP # 指定集群的名字, 默认在DEFAULT下,注意 cluster名字只能a-z字母即可
+      # 配置管理
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        namespace: c6fcef0a-e7ef-4ebd-8341-8291acf705b9
+        group: CHRYL_CONFIG_GROUP
+

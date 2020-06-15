@@ -10,6 +10,38 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>application-1</artifactId>
+    <description>应用:露http协议接口,都需要注册到nacos
+        需要用到 api项目里的接口的实现类,那么直接引入api-1的依赖就可以
+    </description>
 
+    <dependencies>
+        <!-- 注册到 nacos 服务发现-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- nacos config -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
 
+        <!-- 基于 spring boot 基于http -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 使用api -1 ,但是api-1 的接口是基于dubbo协议调用,所以引入dubb -->
+        <dependency>
+            <groupId>com.chryl</groupId>
+            <artifactId>service-1-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- dubbo 调用 api -1 的接口实现类:从dobbo注册中心拉取api-1 的接口实现类 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+    </dependencies>
 </project>
