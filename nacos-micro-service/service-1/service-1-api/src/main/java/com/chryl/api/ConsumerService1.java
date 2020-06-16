@@ -6,6 +6,7 @@ package com.chryl.api;
  *
  * @author Chr.yl
  */
-public interface ConsumerService {
-    public String service();
+public interface ConsumerService1 {
+    //定义dubbo的接口
+    public String service1();
 }

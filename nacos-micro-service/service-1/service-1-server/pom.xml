@@ -23,6 +23,12 @@
             <artifactId>service-1-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- service 1 要使用service 2 的接口 -->
+        <dependency>
+            <groupId>com.chryl</groupId>
+            <artifactId>service-2-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- nacos discovery-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

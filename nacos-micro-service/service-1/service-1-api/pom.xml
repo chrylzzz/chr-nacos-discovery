@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>service-1-api</artifactId>
-    <description>dubbo接口,用来单独作为借口服务
+    <description>dubbo接口,用来单独作为接口服务
         单独作为api项目,因为之后会把api的实现类注册到dubbo上,而dubbo又是rpc远距离调用,不需要实现类,只需要接口信息就行,
         该api项目,以后谁要用到dubbo的接口,就引入api的依赖就可以.
         将来谁要调用dubbo接口,就引入api的依赖就可以了.

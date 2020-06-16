@@ -10,7 +10,40 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>api-gateway</artifactId>
-    <description>网关 请求的转发</description>
+    <description>网关 请求的转发:
+        app1注册到nacos,网关去nacos拉取(服务发现)app1的信息,
+        而网关和app1通过http协议通信
+
+    </description>
+    <dependencies>
+        <!-- nacos discovery-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- nacos config -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- 基于 spring boot 基于http -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- zuul:网关 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+
+        <!-- openfeign:远距离过程调用 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+    </dependencies>
 
 
 </project>

@@ -1,9 +1,9 @@
 server:
-  port: ${port:56030}
+  port: ${port:56040}
 # spring cloud namcos 配置 ,需要注册服务,和发现服务,和配置信息注册到nacos
 spring:
   application:
-    name: service1
+    name: service2
   main:
     allow-bean-definition-overriding: true  #springBoot 2.1 需要设定,防止重复
   cloud:
@@ -25,7 +25,7 @@ dubbo:
     base-packages: com.chryl.service.impl #dubbo 服务扫描基准包,将@service注解的实现暴露给dubbo
   protocol:
     name: dubbo # 指定dubbo 协议,默认为dubbo协议
-    port: ${dubbo_port:20881} # dubbo 协议端口
+    port: ${dubbo_port:20891} # dubbo 协议端口
   registry:
     address: nacos://127.0.0.1:8848 # 注册到naocs ,相当于dubbo的xml配置中的 <dubbo:register address="ip:port"/>
 #    group:  #指定注册的组

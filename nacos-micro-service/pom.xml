@@ -11,6 +11,7 @@
 
     <artifactId>nacos-micro-service</artifactId>
     <packaging>pom</packaging>
+    <description>spring cloud nacos dubbo feign 父工程</description>
     <modules>
         <module>service-1</module>
         <module>service-2</module>
