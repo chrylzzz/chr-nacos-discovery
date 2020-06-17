@@ -43,7 +43,8 @@
             <groupId>com.chryl</groupId>
             <artifactId>service-2-api</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>        <!-- dubbo 调用 api -1 的接口实现类:从dobbo注册中心拉取api-1 的接口实现类 -->
+        </dependency>
+        <!-- dubbo 调用 api -1 的接口实现类:从dobbo注册中心拉取api-1 的接口实现类 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
