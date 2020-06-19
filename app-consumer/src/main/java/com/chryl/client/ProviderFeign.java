@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface ProviderFeign {
 
     @GetMapping("/service")
-    public String service();
+    String service();
 
 }

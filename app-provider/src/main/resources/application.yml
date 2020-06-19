@@ -12,7 +12,7 @@ spring:
       # 生产者 服务注册的地址
         server-addr: 127.0.0.1:8848
         namespace: cf4991df-158c-4cc1-bf7b-a7dd32c3ea04 #指定空间注册,默认在public下
-        cluster-name: chryl # 指定集群的名字, 默认在DEFAULT下
+        cluster-name: CHRYL # 指定集群的名字, 默认在DEFAULT下
 logging:
   level:
     root: info
