@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author Chr.yl
  */
-@FeignClient(value = "app-provider")//这里的一般是服务的名称
+@FeignClient(value = "app-provider")//这里的一般是服务的名称//value为其他工程yml配置文件的applicationName
 public interface ProviderFeign {
 
     @GetMapping("/service")
